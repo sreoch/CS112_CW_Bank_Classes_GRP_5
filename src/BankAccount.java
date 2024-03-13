@@ -6,9 +6,9 @@ public abstract class BankAccount {
     private String accountName;
     private String accountNumber;
 
-    public BankAccount(String name, String number) {
-        this.accountName = name;
-        this.accountNumber = number;
+    public BankAccount(String accName, String accNumber) {
+        this.accountName = accName;
+        this.accountNumber = accNumber;
     }
 
     public static float getLowRate() {
@@ -19,23 +19,23 @@ public abstract class BankAccount {
         return highRate;
     }
 
-    public static void setLowRate(float rate) {
-        if (rate < 0) {
+    public static void setLowRate(float lowRate) {
+        if (lowRate < 0) {
             BankAccount.lowRate = 0;
-        } else if (rate > BankAccount.highRate) {
+        } else if (lowRate > BankAccount.highRate) {
             BankAccount.lowRate = BankAccount.highRate;
         } else {
-            BankAccount.lowRate = rate;
+            BankAccount.lowRate = lowRate;
         }
     }
 
-    public static void setHighRate(float rate) {
-        if (rate > 0) {
+    public static void setHighRate(float highRate) {
+        if (highRate > 10) {
             BankAccount.highRate = 10;
-        } else if (rate < BankAccount.lowRate) {
+        } else if (highRate < BankAccount.lowRate) {
             BankAccount.highRate = BankAccount.lowRate;
         } else {
-            BankAccount.lowRate = rate;
+            BankAccount.lowRate = highRate;
         }
     }
 
