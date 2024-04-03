@@ -30,7 +30,7 @@ public abstract class BankAccount {
     }
 
     public static void setHighRate(float highRate) {
-        if (highRate > 10) {
+        if (highRate >= 10) {
             BankAccount.highRate = 10;
         } else if (highRate < BankAccount.lowRate) {
             BankAccount.highRate = BankAccount.lowRate;
@@ -42,6 +42,8 @@ public abstract class BankAccount {
     public float getBalance() {
         return balance;
     }
+
+    public void setBalance(float balance){ this.balance = balance;}
 
     public String getAccountName() {
         return accountName;
